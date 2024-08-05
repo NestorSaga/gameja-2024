@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b8e43c50599da43841778130e476f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0.33
+  waitTime: 0.15
   XLimit: 3
   ZLimit: 3
 --- !u!4 &207287318
@@ -1233,6 +1233,55 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1735569570}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1101112819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1101112821}
+  - component: {fileID: 1101112820}
+  m_Layer: 0
+  m_Name: BeatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1101112820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101112819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0798757a203c3484d97d1b4d9458f100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BPM: 130
+  tickInterval: 0
+  wiggle: 0.1
+  currentTimer: 0
+  actionable: 0
+--- !u!4 &1101112821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101112819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.203218, y: 1.0695515, z: 1.0017349}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137218968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,8 +2257,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1687735086}
   - component: {fileID: 1687735085}
-  - component: {fileID: 1687735084}
   - component: {fileID: 1687735087}
+  - component: {fileID: 1687735088}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2217,14 +2266,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1687735084
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687735083}
-  m_Enabled: 1
 --- !u!20 &1687735085
 Camera:
   m_ObjectHideFlags: 0
@@ -2316,6 +2357,19 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1687735088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687735083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1001 &1735569570
 PrefabInstance:
   m_ObjectHideFlags: 0
