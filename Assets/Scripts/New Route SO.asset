@@ -13,5 +13,18 @@ MonoBehaviour:
   m_Name: New Route SO
   m_EditorClassIdentifier: 
   routePoints:
-  - values: 0
-    directions: 0
+  - route:
+    - direction: 0
+    - direction: 2
+    - direction: 2
+    - direction: 1
+  - route:
+    - direction: 0
+    - direction: 3
+    - direction: 3
+    - direction: 1
+  - route:
+    - direction: 2
+    - direction: 2
+    - direction: 0
+    - direction: 3
