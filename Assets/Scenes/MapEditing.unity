@@ -382,6 +382,7 @@ MonoBehaviour:
   currentRot: {x: 0, y: 0, z: 0}
   routeSO: {fileID: 11400000, guid: a01fa24e6a698fd439c18e71eb87c8d7, type: 2}
   focusRouteReader: {fileID: 608928110}
+  beatScript: {fileID: 1101112820}
 --- !u!4 &207287318
 Transform:
   m_ObjectHideFlags: 0
@@ -1030,6 +1031,9 @@ MonoBehaviour:
   mark: {fileID: 2471659028745416702, guid: 763cad3167ba11b48a1fbf8de7e45d69, type: 3}
   focus: {fileID: 2036894842}
   index: 0
+  readyNext: 0
+  lastBeat: 0
+  beatScript: {fileID: 1101112820}
 --- !u!4 &608928111
 Transform:
   m_ObjectHideFlags: 0
@@ -2049,12 +2053,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BPM: 120
   tickInterval: 0
-  wiggle: 0.1
+  wiggle: 0.35
   currentTimer: 0
   actionable: 0
   movement: {fileID: 207287317}
   currentBeat: 1
   started: 0
+  inputMade: 0
+  inputRegistered: 0
 --- !u!4 &1101112821
 Transform:
   m_ObjectHideFlags: 0
