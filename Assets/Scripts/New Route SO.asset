@@ -14,17 +14,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   routePoints:
   - route:
-    - direction: 0
     - direction: 2
     - direction: 2
+  - route:
+    - direction: 1
     - direction: 1
   - route:
-    - direction: 0
     - direction: 3
+    - direction: 3
+  - route:
+    - direction: 3
+    - direction: 0
+  - route:
+    - direction: 0
+    - direction: 0
+    - direction: 0
+    - direction: 2
+    - direction: 2
+  - route:
+    - direction: 1
+    - direction: 3
+  - route:
+    - direction: 1
+    - direction: 2
+  - route:
+    - direction: 3
+    - direction: 3
+  - route:
     - direction: 3
     - direction: 1
+    - direction: 1
+    - direction: 2
+    - direction: 2
   - route:
-    - direction: 2
-    - direction: 2
-    - direction: 0
     - direction: 3
+    - direction: 0
+  - route:
+    - direction: 0
+    - direction: 2
