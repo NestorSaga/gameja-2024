@@ -54,6 +54,7 @@ public class CanvasAnimationSound : MonoBehaviour
         slowSongInstance.release();
         beatScript.started = true;
         movement.NextMovement();
+        focusRouteReader.NextStepInRoute();
     }
 
 }

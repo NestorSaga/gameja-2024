@@ -11,11 +11,20 @@ public class FocusRouteReader : MonoBehaviour
 
     public int index;
 
+    public bool readyNext;
+    public int lastBeat;
+
+    public BeatScript beatScript;
+
 
 
     private void Update()
     {
-
+        if (readyNext && lastBeat != beatScript.currentBeat)
+        {
+            NextStepInRoute();
+            readyNext = false;
+        }
     }
 
     public void NextStepInRoute()
@@ -26,8 +35,6 @@ public class FocusRouteReader : MonoBehaviour
 
             for (int i = 0; i < routeSO.routePoints[index].route.Count; i++)
             {
-
-                Debug.Log("im in i = " + i + " and count is + " + routeSO.routePoints[index].route.Count);
                 if (i != routeSO.routePoints[index].route.Count - 1) //is not last
                 {
                     RouteMove(routeSO.routePoints[index].route[i].direction, true);

@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
 
     public FocusRouteReader focusRouteReader;
 
+    public BeatScript beatScript;
+
     int firstIndex = 0;
     int secondIndex = 0;
 
@@ -36,7 +38,6 @@ public class Movement : MonoBehaviour
             {
                 if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.UP)
                 {
-                    Debug.Log("UP");
                     if (transform.position.z <= ZLimit)
                     {
                         StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), false, false));
@@ -44,7 +45,6 @@ public class Movement : MonoBehaviour
                 }
                 else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.DOWN)
                 {
-                    Debug.Log("DOWN");
                     if (transform.position.z >= 1)
                     {
                         StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), false, false));
@@ -52,7 +52,6 @@ public class Movement : MonoBehaviour
                 }
                 else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.LEFT)
                 {
-                    Debug.Log("LEFT");
                     if (transform.position.x >= 1)
                     {
                         StartCoroutine(MoveCoroutine(new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), true, false));
@@ -60,7 +59,6 @@ public class Movement : MonoBehaviour
                 }
                 else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.RIGHT)
                 {
-                    Debug.Log("RIGHT");
                     if (transform.position.x <= XLimit)
                     {
                         StartCoroutine(MoveCoroutine(new Vector3(transform.position.x + 1, transform.position.y, transform.position.z), true, true));
@@ -68,7 +66,6 @@ public class Movement : MonoBehaviour
                 }
                 else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.STOP)
                 {
-                    Debug.Log("STOP");
                     if (transform.position.x <= XLimit)
                     {
                         StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z), false, false));
@@ -79,7 +76,8 @@ public class Movement : MonoBehaviour
                 {
                     secondIndex = 0;
                     firstIndex++;
-                    focusRouteReader.NextStepInRoute();
+                    focusRouteReader.readyNext = true;
+                    focusRouteReader.lastBeat = beatScript.currentBeat;
                     if (firstIndex >= routeSO.routePoints.Count)
                     {
                         //finished

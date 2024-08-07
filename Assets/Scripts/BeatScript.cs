@@ -15,6 +15,8 @@ public class BeatScript : MonoBehaviour
     public int currentBeat = 1;
 
     public bool started;
+    public bool inputMade;
+    public bool inputRegistered;
 
     private void Start()
     {
@@ -27,10 +29,13 @@ public class BeatScript : MonoBehaviour
         {
             currentTimer += Time.deltaTime;
 
-            if (currentTimer >= tickInterval - wiggle && currentTimer <= tickInterval + wiggle)
+            if (currentTimer >= (tickInterval - wiggle) && currentTimer <= (tickInterval + wiggle))
             {
-                actionable = true;
-                Debug.Log("actionable");
+                if (currentBeat != 1)
+                {
+                    actionable = true;
+                    Debug.Log("actionable");
+                }
 
             }
             else
@@ -43,6 +48,39 @@ public class BeatScript : MonoBehaviour
             {
                 ResetTick();
             }
+
+            if (Input.GetKeyDown(KeyCode.W) && !inputMade)               
+            {
+                inputMade = true;
+            }else if (Input.GetKeyDown(KeyCode.S) && !inputMade)
+            {
+                inputMade = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.A) && !inputMade)
+            {
+                inputMade = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.D) && !inputMade)
+            {
+                inputMade = true;
+            }
+
+            if (actionable)
+            {
+                if (inputMade)
+                {
+                    Debug.Log("GOD CABRON");
+                }
+            }
+            else
+            {
+                if (inputMade)
+                {
+                    Debug.Log("CAGASTE");
+                }
+            }
+
+            inputMade = false;
         }
 
         
@@ -56,6 +94,7 @@ public class BeatScript : MonoBehaviour
     void ResetTick()
     {
         currentBeat++;
+        movement.NextMovement();
         if (currentBeat >= 4)
         {
             currentBeat = 1;

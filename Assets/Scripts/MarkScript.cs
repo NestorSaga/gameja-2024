@@ -16,7 +16,7 @@ public class MarkScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            movement.NextMovement();
+            Debug.Log("mark consumed");
             Destroy(this.gameObject);
         }
     }
