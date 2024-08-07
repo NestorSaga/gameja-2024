@@ -11,7 +11,8 @@ public class RouteStep
         UP,
         DOWN,
         RIGHT,
-        LEFT
+        LEFT,
+        STOP
     }
     public dir direction;
 

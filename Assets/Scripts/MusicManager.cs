@@ -31,7 +31,7 @@ public class MusicManager : MonoBehaviour
     private void Awake()
     {
         musicInstance = RuntimeManager.CreateInstance(music);
-        musicInstance.start();
+        //musicInstance.start();
     }
 
     private void Start()

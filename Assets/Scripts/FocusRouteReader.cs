@@ -7,37 +7,44 @@ public class FocusRouteReader : MonoBehaviour
     public RouteSO routeSO;
 
     public GameObject mark;
+    public GameObject focus;
 
     public int index;
 
 
 
-
-
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (index < routeSO.routePoints.Count)
-            {
-                for (int i = 0; i < routeSO.routePoints[index].route.Count; i++)
-                {
-               
-                    Debug.Log("im in i = " + i + " and count is + " + routeSO.routePoints[index].route.Count);
-                    if (i != routeSO.routePoints[index].route.Count - 1) //is not last
-                    {
-                        RouteMove(routeSO.routePoints[index].route[i].direction, true);
-                    }
-                    else
-                    {
-                        RouteMove(routeSO.routePoints[index].route[i].direction, false);
 
-                    }
-                }               
+    }
+
+    public void NextStepInRoute()
+    {
+        if (index < routeSO.routePoints.Count)
+        {
+            focus.SetActive(false);
+
+            for (int i = 0; i < routeSO.routePoints[index].route.Count; i++)
+            {
+
+                Debug.Log("im in i = " + i + " and count is + " + routeSO.routePoints[index].route.Count);
+                if (i != routeSO.routePoints[index].route.Count - 1) //is not last
+                {
+                    RouteMove(routeSO.routePoints[index].route[i].direction, true);
+                }
+                else
+                {
+                    RouteMove(routeSO.routePoints[index].route[i].direction, false);
+
+                }
             }
-            index++;
         }
+        else
+        {
+            Debug.Log("all movements finished");
+        }
+        focus.SetActive(true);
+        index++;
     }
 
     void RouteMove(RouteStep.dir dir, bool spawn)

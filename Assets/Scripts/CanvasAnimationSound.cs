@@ -7,9 +7,13 @@ using FMOD.Studio;
 public class CanvasAnimationSound : MonoBehaviour
 {
 
-    public EventReference sound1, sound2;
+    public EventReference sound1, sound2, slowSong;
 
-    EventInstance sound1Instance, sound2Instance;
+    EventInstance sound1Instance, sound2Instance, slowSongInstance;
+
+    public FocusRouteReader focusRouteReader;
+    public BeatScript beatScript;
+    public Movement movement;
 
     bool started;
 
@@ -42,4 +46,14 @@ public class CanvasAnimationSound : MonoBehaviour
         sound2Instance.start();
         sound2Instance.release();
     }
+
+    public void PlaySong1()
+    {
+        slowSongInstance = RuntimeManager.CreateInstance(slowSong);
+        slowSongInstance.start();
+        slowSongInstance.release();
+        beatScript.started = true;
+        movement.NextMovement();
+    }
+
 }

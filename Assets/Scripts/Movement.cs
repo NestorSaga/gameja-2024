@@ -16,44 +16,77 @@ public class Movement : MonoBehaviour
     public Vector3 startingRot;
     public Vector3 currentRot;
 
+    public RouteSO routeSO;
+
+    public FocusRouteReader focusRouteReader;
+
+    int firstIndex = 0;
+    int secondIndex = 0;
+
     private void Start()
     {
         startingRot = transform.eulerAngles;
     }
-    void Update()
-    {
-        if (!isMoving)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                if (transform.position.z <= ZLimit)
-                {
-                    StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z +1), false, false));
-                }
-            }else if (Input.GetKeyDown(KeyCode.S))
-            {
-                if (transform.position.z >= 1)
-                {
-                    StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), false, false));
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.A))
-            {
-                if (transform.position.x >= 1)
-                {
-                    StartCoroutine(MoveCoroutine(new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), true, false));
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.D))
-            {
-                if (transform.position.x <= XLimit)
-                {
-                    StartCoroutine(MoveCoroutine(new Vector3(transform.position.x + 1, transform.position.y, transform.position.z), true, true));
-                }
-            }
-        }
 
-        
+    public void NextMovement()
+    {
+        if (firstIndex < routeSO.routePoints.Count)
+        {
+            if (secondIndex < routeSO.routePoints[firstIndex].route.Count)
+            {
+                if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.UP)
+                {
+                    Debug.Log("UP");
+                    if (transform.position.z <= ZLimit)
+                    {
+                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), false, false));
+                    }
+                }
+                else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.DOWN)
+                {
+                    Debug.Log("DOWN");
+                    if (transform.position.z >= 1)
+                    {
+                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), false, false));
+                    }
+                }
+                else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.LEFT)
+                {
+                    Debug.Log("LEFT");
+                    if (transform.position.x >= 1)
+                    {
+                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), true, false));
+                    }
+                }
+                else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.RIGHT)
+                {
+                    Debug.Log("RIGHT");
+                    if (transform.position.x <= XLimit)
+                    {
+                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x + 1, transform.position.y, transform.position.z), true, true));
+                    }
+                }
+                else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.STOP)
+                {
+                    Debug.Log("STOP");
+                    if (transform.position.x <= XLimit)
+                    {
+                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z), false, false));
+                    }
+                }
+                secondIndex++;
+                if (secondIndex >= routeSO.routePoints[firstIndex].route.Count)
+                {
+                    secondIndex = 0;
+                    firstIndex++;
+                    focusRouteReader.NextStepInRoute();
+                    if (firstIndex >= routeSO.routePoints.Count)
+                    {
+                        //finished
+                    }
+                }
+            }           
+        }
     }
 
     IEnumerator MoveCoroutine(Vector3 pos, bool isHorizontal, bool isRight)

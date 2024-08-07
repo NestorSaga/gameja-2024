@@ -10,6 +10,12 @@ public class BeatScript : MonoBehaviour
 
     public bool actionable;
 
+    public Movement movement;
+
+    public int currentBeat = 1;
+
+    public bool started;
+
     private void Start()
     {
         tickInterval = 60 / BPM;
@@ -17,23 +23,29 @@ public class BeatScript : MonoBehaviour
 
     void Update()
     {
-        currentTimer += Time.deltaTime;
-
-        if (currentTimer >= tickInterval - wiggle && currentTimer <= tickInterval + wiggle)
+        if (started)
         {
-            actionable = true;
-            Debug.Log("actionable");
-        }
-        else
-        {
-            actionable = false;
-        }
+            currentTimer += Time.deltaTime;
+
+            if (currentTimer >= tickInterval - wiggle && currentTimer <= tickInterval + wiggle)
+            {
+                actionable = true;
+                Debug.Log("actionable");
+
+            }
+            else
+            {
+                actionable = false;
+            }
 
 
-        if (currentTimer >= tickInterval)
-        {
-            ResetTick();
+            if (currentTimer >= tickInterval)
+            {
+                ResetTick();
+            }
         }
+
+        
     }
 
     void Tick()
@@ -43,6 +55,11 @@ public class BeatScript : MonoBehaviour
 
     void ResetTick()
     {
+        currentBeat++;
+        if (currentBeat >= 4)
+        {
+            currentBeat = 1;
+        }
         currentTimer = 0;
     }
 }
