@@ -10,122 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1c64578e98f0d0409f989849e05ad5f, type: 3}
-  m_Name: New Route SO
+  m_Name: NPC_DOWNLEFT
   m_EditorClassIdentifier: 
   routePoints:
   - route:
     - direction: 4
-    - direction: 2
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 0
     - direction: 0
     - direction: 2
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 1
-    - direction: 1
-    - direction: 2
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 1
-    - direction: 2
-    - direction: 2
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 1
-    - direction: 3
-    - direction: 3
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 0
-    - direction: 2
-    - direction: 2
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 2
-    - direction: 2
-    - direction: 2
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 2
-    - direction: 0
-    - direction: 0
-    - direction: 3
   - route:
     - direction: 4
     - direction: 0
@@ -136,62 +27,34 @@ MonoBehaviour:
     - direction: 3
   - route:
     - direction: 4
+    - direction: 0
+    - direction: 0
+  - route:
+    - direction: 4
     - direction: 1
+    - direction: 1
+    - direction: 1
+    - direction: 1
+    - direction: 2
+  - route:
+    - direction: 4
+    - direction: 2
     - direction: 2
   - route:
     - direction: 4
     - direction: 3
-    - direction: 1
-  - route:
-    - direction: 4
     - direction: 0
-    - direction: 3
   - route:
     - direction: 4
     - direction: 2
     - direction: 2
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 0
   - route:
     - direction: 4
     - direction: 3
     - direction: 3
-    - direction: 1
-    - direction: 1
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 3
     - direction: 3
     - direction: 0
     - direction: 0
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 0
   - route:
     - direction: 4
     - direction: 0
@@ -199,10 +62,29 @@ MonoBehaviour:
   - route:
     - direction: 4
     - direction: 2
-    - direction: 1
+    - direction: 2
   - route:
     - direction: 4
     - direction: 1
+    - direction: 1
+    - direction: 1
+    - direction: 3
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 3
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 2
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 2
+  - route:
+    - direction: 4
+    - direction: 2
     - direction: 1
   - route:
     - direction: 4
@@ -220,18 +102,49 @@ MonoBehaviour:
     - direction: 2
   - route:
     - direction: 4
+    - direction: 3
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 1
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 1
     - direction: 2
-    - direction: 1
+    - direction: 2
+    - direction: 2
   - route:
     - direction: 4
-    - direction: 1
-    - direction: 1
+    - direction: 3
+    - direction: 3
   - route:
     - direction: 4
-    - direction: 1
+    - direction: 2
     - direction: 2
     - direction: 2
     - direction: 0
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 3
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 1
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 3
     - direction: 0
   - route:
     - direction: 4
@@ -240,16 +153,103 @@ MonoBehaviour:
   - route:
     - direction: 4
     - direction: 0
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 1
+    - direction: 1
+    - direction: 1
+    - direction: 2
+    - direction: 2
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 3
     - direction: 3
   - route:
     - direction: 4
+    - direction: 3
+    - direction: 3
+    - direction: 1
+    - direction: 1
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 2
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 3
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 2
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 0
+    - direction: 3
     - direction: 3
     - direction: 3
   - route:
     - direction: 4
     - direction: 1
+    - direction: 1
+    - direction: 1
+    - direction: 1
     - direction: 2
   - route:
     - direction: 4
-    - direction: 2
+    - direction: 0
+    - direction: 0
+  - route:
+    - direction: 4
     - direction: 1
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 3
+    - direction: 0
+    - direction: 0
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 2
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 1
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 0
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 2
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 3
