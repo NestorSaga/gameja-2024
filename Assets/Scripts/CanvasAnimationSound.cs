@@ -66,7 +66,7 @@ public class CanvasAnimationSound : MonoBehaviour
         movement.NextMovement();
         foreach (var item in NPCMovementList)
         {
-            //item.NextMovement();
+            item.NextMovement();
         }
         focusRouteReader.NextStepInRoute();
     }

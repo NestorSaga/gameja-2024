@@ -30,7 +30,7 @@ public class NPCMovement : MonoBehaviour
 
     private void Start()
     {
-        routeSO = FindObjectOfType<Movement>().routeSO;
+        //routeSO = FindObjectOfType<Movement>().routeSO;
         beatScript = BeatScript.instance;
     }
 

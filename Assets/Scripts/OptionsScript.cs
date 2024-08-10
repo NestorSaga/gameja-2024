@@ -35,6 +35,7 @@ public class OptionsScript : MonoBehaviour
     public void SelectChar(int id)
     {
         selectedChar = id;
+        GetComponent<SelectedButtons>().DeselectAll(id);
     }
 
     public void OnVolumeChange()
