@@ -15,13 +15,18 @@ public class FocusRouteReader : MonoBehaviour
     public int lastBeat;
 
     public BeatScript beatScript;
+    private void Start()
+    {
+        beatScript = BeatScript.instance;
+    }
 
 
 
     private void Update()
     {
-        if (readyNext && lastBeat != beatScript.currentBeat)
+        if (readyNext && beatScript.currentFMODBeat == 1)
         {
+            //lastBeat = beatScript.currentFMODBeat;
             NextStepInRoute();
             readyNext = false;
         }
@@ -42,6 +47,7 @@ public class FocusRouteReader : MonoBehaviour
                 else
                 {
                     RouteMove(routeSO.routePoints[index].route[i].direction, false);
+                    Debug.Log("index is " + index + "and i is " + i);
 
                 }
             }

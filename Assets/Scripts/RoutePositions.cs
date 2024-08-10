@@ -7,5 +7,6 @@ using System;
 public class RoutePositions
 {
     public List<RouteStep> route;
+    public bool isFive;
 
 }

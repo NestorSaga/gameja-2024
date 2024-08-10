@@ -25,13 +25,31 @@ public class Movement : MonoBehaviour
     int firstIndex = 0;
     int secondIndex = 0;
 
+    public SpriteRenderer sprite;
+    public Color shaded, bright;
+
+    public GameObject good, bad;
+    public ParticleSystem particles;
+
+    //public Animator 
+
     private void Start()
     {
         startingRot = transform.eulerAngles;
+        beatScript = BeatScript.instance;
+        sprite.sprite = OptionsScript.instance.chars[OptionsScript.instance.selectedChar];
+        beatScript.particles = particles;
+        beatScript.good = good;
+        beatScript.bad = bad;
+    }
+    public bool CheckIfIsFive()
+    {
+        return routeSO.routePoints[firstIndex].isFive;
     }
 
     public void NextMovement()
     {
+        
         if (firstIndex < routeSO.routePoints.Count)
         {
             if (secondIndex < routeSO.routePoints[firstIndex].route.Count)
@@ -72,12 +90,14 @@ public class Movement : MonoBehaviour
                     }
                 }
                 secondIndex++;
+                sprite.color = shaded;
                 if (secondIndex >= routeSO.routePoints[firstIndex].route.Count)
                 {
                     secondIndex = 0;
                     firstIndex++;
                     focusRouteReader.readyNext = true;
-                    focusRouteReader.lastBeat = beatScript.currentBeat;
+                    focusRouteReader.lastBeat = beatScript.currentFMODBeat;
+                    sprite.color = bright;
                     if (firstIndex >= routeSO.routePoints.Count)
                     {
                         //finished

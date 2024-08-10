@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1555002224098135257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555002224098135263}
+  - component: {fileID: 1555002224098135262}
+  - component: {fileID: 7551871926060908963}
+  m_Layer: 0
+  m_Name: BeatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1555002224098135263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555002224098135257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.203218, y: 1.0695515, z: 1.0017349}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555002224098135262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555002224098135257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0798757a203c3484d97d1b4d9458f100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BPM: 120
+  tickInterval: 0
+  wiggle: 0.35
+  currentTimer: 0
+  currenTimerMaxAmount: 0
+  ARcurrenTimerMaxAmount: 0
+  actionable: 0
+  movement: {fileID: 0}
+  NPCMovementList: []
+  currentBeat: 1
+  currentFMODBeat: 0
+  started: 0
+  inputMade: 0
+  inputRegistered: 0
+  currentLevel: 0
+  good: {fileID: 0}
+  bad: {fileID: 0}
+--- !u!114 &7551871926060908963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555002224098135257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff10310ebf338bb468309903c8965734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upBeatDivisor: 2
+  music:
+    Guid:
+      Data1: -1462186954
+      Data2: 1208251234
+      Data3: -2103479368
+      Data4: -629798797
+    Path: event:/pokemon

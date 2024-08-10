@@ -15,7 +15,7 @@ public class MusicManager : MonoBehaviour
     public TimelineInfo timelineInfo = null;
     private GCHandle timelineHandle;
 
-    private FMOD.Studio.EventInstance musicInstance;
+    public FMOD.Studio.EventInstance musicInstance;
 
     private FMOD.Studio.EVENT_CALLBACK beatCallback;
 
@@ -31,7 +31,7 @@ public class MusicManager : MonoBehaviour
     private void Awake()
     {
         musicInstance = RuntimeManager.CreateInstance(music);
-        //musicInstance.start();
+        musicInstance.start();
     }
 
     private void Start()
@@ -41,6 +41,17 @@ public class MusicManager : MonoBehaviour
         timelineHandle = GCHandle.Alloc(timelineInfo, GCHandleType.Pinned);
         musicInstance.setUserData(GCHandle.ToIntPtr(timelineHandle));
         musicInstance.setCallback(beatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT | FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER);
+    }
+
+    public void StartMusic()
+    {
+        /*musicInstance.start();
+        timelineInfo = new TimelineInfo();
+        beatCallback = new FMOD.Studio.EVENT_CALLBACK(BeatEventCallback);
+        timelineHandle = GCHandle.Alloc(timelineInfo, GCHandleType.Pinned);
+        musicInstance.setUserData(GCHandle.ToIntPtr(timelineHandle));
+        musicInstance.setCallback(beatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT | FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER);
+        */
     }
 
     private void OnGUI()

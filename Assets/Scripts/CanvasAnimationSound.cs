@@ -17,11 +17,16 @@ public class CanvasAnimationSound : MonoBehaviour
 
     bool started;
 
+    //public List<NPCMovement> NPCMovementList;
+    public NPCMovement[] NPCMovementList;
+
 
 
     private void Start()
     {
-        
+        beatScript = FindObjectOfType<BeatScript>();
+        NPCMovementList = FindObjectsOfType<NPCMovement>();
+        BeatScript.instance.NPCMovementList = NPCMovementList;
     }
 
     private void Update()
@@ -49,11 +54,20 @@ public class CanvasAnimationSound : MonoBehaviour
 
     public void PlaySong1()
     {
-        slowSongInstance = RuntimeManager.CreateInstance(slowSong);
+        /*slowSongInstance = RuntimeManager.CreateInstance(slowSong);
         slowSongInstance.start();
         slowSongInstance.release();
+        */
+        slowSongInstance = RuntimeManager.CreateInstance(slowSong);
+        beatScript.gameObject.GetComponent<BeatTracker>().musicPlayEvent = slowSongInstance;
+        beatScript.gameObject.GetComponent<BeatTracker>().StartMusic();
+        beatScript.movement = movement;
         beatScript.started = true;
         movement.NextMovement();
+        foreach (var item in NPCMovementList)
+        {
+            //item.NextMovement();
+        }
         focusRouteReader.NextStepInRoute();
     }
 

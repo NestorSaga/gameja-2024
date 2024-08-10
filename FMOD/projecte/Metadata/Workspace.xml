@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{26a5dda5-b552-4263-bf1d-175358a4c0f8}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../../../../Documents/Projects/Gameja semaneja 2024/gameja-2024/FMOD</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{3ba6422d-0205-4899-8681-6dde9a39ffea}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{37a4bd68-7f76-481e-9188-15a5ece8d71c}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{18894d65-f189-4958-b45c-4f2aad44130f}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{e9bff541-27a9-44df-b510-f3e45a6e3dfc}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{e7d550bc-edcd-4d90-88fb-01d0b54c68ed}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{c621a9d3-5846-4881-9dd9-5aab483a3158}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{a0164c10-6f92-4de5-a302-79cdb62faed4}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{cb1c28df-8fa3-4ea6-94d5-b3f2b1802374}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{e933ffc4-5cc6-4afd-a6f0-2e52d092f505}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{422b58ec-04a2-4a17-a35a-f4c97a20bb77}</destination>
+		</relationship>
+	</object>
+</objects>
