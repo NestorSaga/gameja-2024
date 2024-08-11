@@ -52,83 +52,91 @@ public class Movement : MonoBehaviour
 
     public void NextMovement()
     {
-
-
-        beatScript.currentDirection = routeSO.routePoints[firstIndex].route[secondIndex].direction;
-
-        if (routeSO.routePoints[firstIndex].route.Count > secondIndex+1)
+        if (BeatScript.instance.started)
         {
-            beatScript.nextDirection = routeSO.routePoints[firstIndex].route[secondIndex+1].direction;
-        }
-        else
-        {
-            if(routeSO.routePoints.Count > firstIndex+1)
+            if (routeSO.routePoints.Count > firstIndex)
             {
-                beatScript.nextDirection = routeSO.routePoints[firstIndex+1].route[0].direction;
+                beatScript.currentDirection = routeSO.routePoints[firstIndex].route[secondIndex].direction;
+            }
+
+
+            if (routeSO.routePoints[firstIndex].route.Count > secondIndex + 1)
+            {
+                beatScript.nextDirection = routeSO.routePoints[firstIndex].route[secondIndex + 1].direction;
             }
             else
             {
-                beatScript.nextDirection = routeSO.routePoints[firstIndex].route[secondIndex].direction;
+                if (routeSO.routePoints.Count > firstIndex + 1)
+                {
+                    beatScript.nextDirection = routeSO.routePoints[firstIndex + 1].route[0].direction;
+                }
+                else
+                {
+                    beatScript.nextDirection = routeSO.routePoints[firstIndex].route[secondIndex].direction;
+                }
+            }
+
+            if (firstIndex < routeSO.routePoints.Count)
+            {
+                if (secondIndex < routeSO.routePoints[firstIndex].route.Count)
+                {
+                    if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.UP)
+                    {
+                        if (transform.position.z <= ZLimit)
+                        {
+                            StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), false, false));
+                        }
+                    }
+                    else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.DOWN)
+                    {
+                        if (transform.position.z >= 1)
+                        {
+                            StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), false, false));
+                        }
+                    }
+                    else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.LEFT)
+                    {
+                        if (transform.position.x >= 1)
+                        {
+                            StartCoroutine(MoveCoroutine(new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), true, false));
+                        }
+                    }
+                    else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.RIGHT)
+                    {
+                        if (transform.position.x <= XLimit)
+                        {
+                            StartCoroutine(MoveCoroutine(new Vector3(transform.position.x + 1, transform.position.y, transform.position.z), true, true));
+                        }
+                    }
+                    else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.STOP)
+                    {
+                        if (transform.position.x <= XLimit)
+                        {
+                            StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z), false, false));
+                        }
+                    }
+                    secondIndex++;
+                    sprite.color = shaded;
+                    if (secondIndex >= routeSO.routePoints[firstIndex].route.Count)
+                    {
+                        secondIndex = 0;
+                        firstIndex++;
+                        focusRouteReader.readyNext = true;
+                        focusRouteReader.lastBeat = beatScript.currentFMODBeat;
+                        sprite.color = bright;
+                        if (firstIndex >= routeSO.routePoints.Count)
+                        {
+                            //finished
+                            theatreAnimator.SetTrigger("reverse");
+                            finalAnimator.SetTrigger("final");
+                            beatScript.started = false;
+                        }
+                    }
+                }
             }
         }
 
-        if (firstIndex < routeSO.routePoints.Count)
-        {
-            if (secondIndex < routeSO.routePoints[firstIndex].route.Count)
-            {
-                if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.UP)
-                {
-                    if (transform.position.z <= ZLimit)
-                    {
-                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), false, false));
-                    }
-                }
-                else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.DOWN)
-                {
-                    if (transform.position.z >= 1)
-                    {
-                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), false, false));
-                    }
-                }
-                else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.LEFT)
-                {
-                    if (transform.position.x >= 1)
-                    {
-                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), true, false));
-                    }
-                }
-                else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.RIGHT)
-                {
-                    if (transform.position.x <= XLimit)
-                    {
-                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x + 1, transform.position.y, transform.position.z), true, true));
-                    }
-                }
-                else if (routeSO.routePoints[firstIndex].route[secondIndex].direction == RouteStep.dir.STOP)
-                {
-                    if (transform.position.x <= XLimit)
-                    {
-                        StartCoroutine(MoveCoroutine(new Vector3(transform.position.x, transform.position.y, transform.position.z), false, false));
-                    }
-                }
-                secondIndex++;
-                sprite.color = shaded;
-                if (secondIndex >= routeSO.routePoints[firstIndex].route.Count)
-                {
-                    secondIndex = 0;
-                    firstIndex++;
-                    focusRouteReader.readyNext = true;
-                    focusRouteReader.lastBeat = beatScript.currentFMODBeat;
-                    sprite.color = bright;
-                    if (firstIndex >= routeSO.routePoints.Count)
-                    {
-                        //finished
-                        theatreAnimator.SetTrigger("reverse");
-                        finalAnimator.SetTrigger("final");
-                    }
-                }
-            }           
-        }
+        
     }
 
     IEnumerator MoveCoroutine(Vector3 pos, bool isHorizontal, bool isRight)

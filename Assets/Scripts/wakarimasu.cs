@@ -9,9 +9,9 @@ using TMPro;
 public class wakarimasu : MonoBehaviour
 {
     [SerializeField]
-    public EventReference wakariTriste, wakariHappy, wakariCum, wakariNormal;
+    public EventReference wakariTriste, wakariHappy, wakariCum, wakariNormal, finishSong;
 
-    public EventInstance instance;
+    public EventInstance instance, finishSongInstance;
 
     public int totalPointsSong;
 
@@ -44,6 +44,13 @@ public class wakarimasu : MonoBehaviour
             PlaySad();
         }
 
+    }
+
+    public void PlayFinishSong()
+    {
+        instance = RuntimeManager.CreateInstance(finishSong);
+        instance.start();
+        instance.release();
     }
 
 
