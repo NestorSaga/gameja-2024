@@ -9,7 +9,7 @@ public class CanvasAnimationSound : MonoBehaviour
 
     public EventReference sound1, sound2, slowSong;
 
-    EventInstance sound1Instance, sound2Instance, slowSongInstance;
+    public EventInstance sound1Instance, sound2Instance, slowSongInstance;
 
     public FocusRouteReader focusRouteReader;
     public BeatScript beatScript;

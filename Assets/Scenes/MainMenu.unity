@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3fe0e295f3a20ef40a5e2e64068ae525, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d14e91c40d4f62e4e85c186703d6d127, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1919,18 +1919,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895183639}
   m_CullTransparentMesh: 1
---- !u!114 &985621792 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3617373722813630737, guid: b606bd0b714e51c4f92ee027aff5c107,
-    type: 3}
-  m_PrefabInstance: {fileID: 3617373721915616305}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd32626659bcca449cff91cef650e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &993823415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,8 +2862,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 985621792}
-        m_TargetAssemblyTypeName: OptionsScript, Assembly-CSharp
+      - m_Target: {fileID: 855453161}
+        m_TargetAssemblyTypeName: NonDestroyableOptions, Assembly-CSharp
         m_MethodName: OnVolumeChange
         m_Mode: 1
         m_Arguments:

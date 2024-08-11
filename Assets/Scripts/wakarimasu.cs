@@ -25,23 +25,27 @@ public class wakarimasu : MonoBehaviour
         //BeatScript.instance.points;
         int points = BeatScript.instance.buenus - BeatScript.instance.malus;
 
-        score.text = points + "p.";
+        
         if (BeatScript.instance.buenus - BeatScript.instance.malus >= scoreS)
         {
             PlayCum();
-            
+            score.text = points + "p. \n PERFECT";
+
         }
         else if (BeatScript.instance.buenus - BeatScript.instance.malus >= scoreA)
         {
             PlayHappy();
+            score.text = points + "p. \n GREAT";
         }
         else if (BeatScript.instance.buenus - BeatScript.instance.malus >= scoreB)
         {
             PlayNormal();
+            score.text = points + "p. \n GOOD";
         }
         else
         {
             PlaySad();
+            score.text = points + "p. \n TRY AGAIN";
         }
 
     }
