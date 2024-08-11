@@ -15,6 +15,20 @@ MonoBehaviour:
   routePoints:
   - route:
     - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    - direction: 4
+    isFive: 1
+  - route:
+    - direction: 4
     - direction: 1
     - direction: 1
     isFive: 0
