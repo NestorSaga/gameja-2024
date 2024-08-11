@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c834cb1b-fe8b-4ebe-9f86-87cca547769f}">
+		<property name="assetPath">
+			<value>forheroestherearetrials.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>93.648979591836735</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a0164c10-6f92-4de5-a302-79cdb62faed4}</destination>
+		</relationship>
+	</object>
+</objects>

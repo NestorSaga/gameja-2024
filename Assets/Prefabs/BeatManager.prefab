@@ -52,16 +52,39 @@ MonoBehaviour:
   currenTimerMaxAmount: 0
   ARcurrenTimerMaxAmount: 0
   actionable: 0
+  actionableCurrent: 0
+  actionableNext: 0
   movement: {fileID: 0}
   NPCMovementList: []
   currentBeat: 1
   currentFMODBeat: 0
+  lastFMODBeat: 0
   started: 0
   inputMade: 0
   inputRegistered: 0
   currentLevel: 0
   good: {fileID: 0}
   bad: {fileID: 0}
+  particles: {fileID: 0}
+  currentDirection: 0
+  nextDirection: 0
+  inputDirection: 0
+  buenus: 0
+  malus: 0
+  buenusEvent:
+    Guid:
+      Data1: -1953085969
+      Data2: 1123944232
+      Data3: -1242626893
+      Data4: 948259846
+    Path: event:/Buenus
+  malusEvent:
+    Guid:
+      Data1: 1337644256
+      Data2: 1237020493
+      Data3: -1847863638
+      Data4: 1063486315
+    Path: event:/Malus
 --- !u!114 &7551871926060908963
 MonoBehaviour:
   m_ObjectHideFlags: 0

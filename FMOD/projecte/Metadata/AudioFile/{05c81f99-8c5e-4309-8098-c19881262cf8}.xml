@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{05c81f99-8c5e-4309-8098-c19881262cf8}">
+		<property name="assetPath">
+			<value>146718__leszek_szary__button.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.065941043083900225</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a0164c10-6f92-4de5-a302-79cdb62faed4}</destination>
+		</relationship>
+	</object>
+</objects>

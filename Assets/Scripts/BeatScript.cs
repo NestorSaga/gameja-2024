@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
 
 public class BeatScript : MonoBehaviour
 {
@@ -31,7 +33,15 @@ public class BeatScript : MonoBehaviour
     public GameObject good, bad;
     public ParticleSystem particles;
 
+    public RouteStep.dir currentDirection, nextDirection, inputDirection;
 
+    public int buenus;
+    public int malus;
+
+    [SerializeField]
+    public EventReference buenusEvent, malusEvent;
+
+    public EventInstance buenusInstance, malusInstance;
 
 
     //
@@ -66,6 +76,8 @@ public class BeatScript : MonoBehaviour
         {
             ResetTick();
             currentTimer = 0;
+
+            Debug.Log("RESET current dir is " + movement.routeSO.routePoints[movement.firstIndex].route[movement.secondIndex].direction);
         }
         currentFMODBeat = newBeat;
 
@@ -77,7 +89,8 @@ public class BeatScript : MonoBehaviour
 
         if (started)
         {
-   
+            inputMade = false;
+
             if (currentTimer <= wiggle)
             {
                 actionable = true; //current
@@ -88,6 +101,14 @@ public class BeatScript : MonoBehaviour
             else
             {
                 actionable = false;
+            }
+
+            if (currentFMODBeat == 1)
+            {
+                if (movement.routeSO.routePoints[movement.firstIndex].isFive)
+                {
+                    actionable = true;
+                }
             }
             
             
@@ -114,17 +135,21 @@ public class BeatScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W) && !inputMade)               
             {
                 inputMade = true;
+                inputDirection = RouteStep.dir.UP;
             }else if (Input.GetKeyDown(KeyCode.S) && !inputMade)
             {
                 inputMade = true;
+                inputDirection = RouteStep.dir.DOWN;
             }
             else if (Input.GetKeyDown(KeyCode.A) && !inputMade)
             {
                 inputMade = true;
+                inputDirection = RouteStep.dir.LEFT;
             }
             else if (Input.GetKeyDown(KeyCode.D) && !inputMade)
             {
                 inputMade = true;
+                inputDirection = RouteStep.dir.RIGHT;
             }
 
             
@@ -132,9 +157,24 @@ public class BeatScript : MonoBehaviour
             {
                 if (inputMade)
                 {
-                    Debug.Log("GOD CABRON");
-                    particles.Play();
-                    //good.SetActive(true);
+                    if (inputDirection == currentDirection || inputDirection == nextDirection)
+                    {
+                        Debug.Log("GOD CABRON");
+                        buenus++;
+                        //particles.Play();
+                        good.SetActive(true);
+                        PlayBuenusSound();
+                        StartCoroutine(BuenusMalusShow());
+                    }
+                    else
+                    {
+                        Debug.Log("CAGASTE");
+                        malus++;
+                        bad.SetActive(true);
+                        PlayMalusSound();
+                        StartCoroutine(BuenusMalusShow());
+                    }
+
                 }
             }
             else
@@ -142,12 +182,15 @@ public class BeatScript : MonoBehaviour
                 if (inputMade)
                 {
                     Debug.Log("CAGASTE");
+                    malus++;
                     bad.SetActive(true);
+                    PlayMalusSound();
+                    StartCoroutine(BuenusMalusShow());
                 }
             }
             
           
-            inputMade = false;
+
             currentTimer += Time.deltaTime;
         }
 
@@ -159,10 +202,31 @@ public class BeatScript : MonoBehaviour
 
     }
 
+    void PlayBuenusSound()
+    {
+        if (buenusInstance.isValid())
+        {
+            buenusInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+        buenusInstance = RuntimeManager.CreateInstance(buenusEvent);
+        buenusInstance.start();
+        buenusInstance.release();
+    }
+
+    void PlayMalusSound()
+    {
+        if (malusInstance.isValid())
+        {
+            malusInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+        malusInstance = RuntimeManager.CreateInstance(malusEvent);
+        malusInstance.start();
+        malusInstance.release();
+    }
+
     void ResetTick()
     {
-        good.SetActive(false);
-        bad.SetActive(false);
+
         currentBeat++;
         movement.NextMovement();
         foreach (var item in NPCMovementList)
@@ -174,5 +238,12 @@ public class BeatScript : MonoBehaviour
             currentBeat = 1;
         }
         //currentTimer = 0;
+    }
+
+    IEnumerator BuenusMalusShow()
+    {
+        yield return new WaitForSeconds(.2f);
+        good.SetActive(false);
+        bad.SetActive(false);
     }
 }
