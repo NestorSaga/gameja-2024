@@ -17,18 +17,22 @@ MonoBehaviour:
     - direction: 4
     - direction: 0
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 0
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
     - direction: 3
+    isFive: 0
   - route:
     - direction: 4
     - direction: 0
     - direction: 0
+    isFive: 0
   - route:
     - direction: 4
     - direction: 1
@@ -36,18 +40,22 @@ MonoBehaviour:
     - direction: 1
     - direction: 1
     - direction: 2
+    isFive: 1
   - route:
     - direction: 4
     - direction: 2
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
     - direction: 0
+    isFive: 0
   - route:
     - direction: 4
     - direction: 2
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
@@ -55,14 +63,17 @@ MonoBehaviour:
     - direction: 3
     - direction: 0
     - direction: 0
+    isFive: 1
   - route:
     - direction: 4
     - direction: 0
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 2
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 1
@@ -70,44 +81,53 @@ MonoBehaviour:
     - direction: 1
     - direction: 3
     - direction: 0
+    isFive: 1
   - route:
     - direction: 4
     - direction: 3
     - direction: 3
+    isFive: 0
   - route:
     - direction: 4
     - direction: 0
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 2
     - direction: 2
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 3
-    - direction: 3
-    - direction: 3
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 0
-    - direction: 0
-    - direction: 0
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 1
+    isFive: 0
   - route:
     - direction: 4
     - direction: 1
     - direction: 1
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 1
+    - direction: 3
+    - direction: 3
+    - direction: 3
+    - direction: 3
+    isFive: 1
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 0
+    - direction: 0
+    - direction: 0
+    - direction: 2
+    isFive: 1
+  - route:
+    - direction: 4
+    - direction: 4
+    - direction: 1
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 1
+    - direction: 1
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
@@ -115,10 +135,12 @@ MonoBehaviour:
     - direction: 2
     - direction: 2
     - direction: 2
+    isFive: 1
   - route:
     - direction: 4
     - direction: 3
     - direction: 3
+    isFive: 0
   - route:
     - direction: 4
     - direction: 2
@@ -126,106 +148,129 @@ MonoBehaviour:
     - direction: 2
     - direction: 0
     - direction: 0
+    isFive: 1
   - route:
     - direction: 4
     - direction: 0
     - direction: 3
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
     - direction: 1
+    isFive: 0
   - route:
     - direction: 4
     - direction: 1
     - direction: 1
+    isFive: 0
   - route:
     - direction: 4
     - direction: 0
     - direction: 1
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
     - direction: 0
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
     - direction: 0
+    isFive: 0
   - route:
     - direction: 4
     - direction: 0
     - direction: 0
-  - route:
-    - direction: 4
-    - direction: 1
-    - direction: 1
-    - direction: 1
-    - direction: 2
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 3
-    - direction: 1
-    - direction: 1
-    - direction: 1
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 3
-    - direction: 3
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 2
-  - route:
-    - direction: 4
-    - direction: 0
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 0
-  - route:
-    - direction: 4
-    - direction: 2
-    - direction: 0
-    - direction: 3
-    - direction: 3
-    - direction: 3
+    isFive: 0
   - route:
     - direction: 4
     - direction: 1
     - direction: 1
     - direction: 1
+    - direction: 2
+    - direction: 2
+    isFive: 1
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 0
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 1
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 0
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 3
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 3
+    - direction: 1
+    - direction: 1
+    - direction: 1
+    isFive: 1
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 2
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 3
+    - direction: 3
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 2
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 0
+    - direction: 0
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 0
+    isFive: 0
+  - route:
+    - direction: 4
+    - direction: 2
+    - direction: 0
+    - direction: 3
+    - direction: 3
+    - direction: 3
+    isFive: 1
+  - route:
+    - direction: 4
+    - direction: 1
+    - direction: 1
+    - direction: 1
     - direction: 1
     - direction: 2
+    isFive: 1
   - route:
     - direction: 4
     - direction: 0
     - direction: 0
+    isFive: 0
   - route:
     - direction: 4
     - direction: 1
     - direction: 1
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
@@ -233,23 +278,29 @@ MonoBehaviour:
     - direction: 0
     - direction: 0
     - direction: 0
+    isFive: 1
   - route:
     - direction: 4
     - direction: 2
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
     - direction: 1
+    isFive: 0
   - route:
     - direction: 4
     - direction: 3
     - direction: 0
+    isFive: 0
   - route:
     - direction: 4
     - direction: 2
     - direction: 2
+    isFive: 0
   - route:
     - direction: 4
     - direction: 0
     - direction: 3
+    isFive: 0
