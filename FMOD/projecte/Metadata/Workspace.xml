@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{26a5dda5-b552-4263-bf1d-175358a4c0f8}">
 		<property name="builtBanksOutputDirectory">
-			<value>../../../../../Documents/Projects/Gameja semaneja 2024/gameja-2024/FMOD</value>
+			<value>../</value>
 		</property>
 		<relationship name="masterEventFolder">
 			<destination>{3ba6422d-0205-4899-8681-6dde9a39ffea}</destination>

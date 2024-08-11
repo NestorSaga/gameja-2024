@@ -22,14 +22,17 @@ public class Movement : MonoBehaviour
 
     public BeatScript beatScript;
 
-    int firstIndex = 0;
-    int secondIndex = 0;
+    public int firstIndex = 0;
+    public int secondIndex = 0;
 
     public SpriteRenderer sprite;
     public Color shaded, bright;
 
     public GameObject good, bad;
     public ParticleSystem particles;
+
+    public Animator finalAnimator;
+    public Animator theatreAnimator;
 
     //public Animator 
 
@@ -49,7 +52,26 @@ public class Movement : MonoBehaviour
 
     public void NextMovement()
     {
-        
+
+
+        beatScript.currentDirection = routeSO.routePoints[firstIndex].route[secondIndex].direction;
+
+        if (routeSO.routePoints[firstIndex].route.Count > secondIndex+1)
+        {
+            beatScript.nextDirection = routeSO.routePoints[firstIndex].route[secondIndex+1].direction;
+        }
+        else
+        {
+            if(routeSO.routePoints.Count > firstIndex+1)
+            {
+                beatScript.nextDirection = routeSO.routePoints[firstIndex+1].route[0].direction;
+            }
+            else
+            {
+                beatScript.nextDirection = routeSO.routePoints[firstIndex].route[secondIndex].direction;
+            }
+        }
+
         if (firstIndex < routeSO.routePoints.Count)
         {
             if (secondIndex < routeSO.routePoints[firstIndex].route.Count)
@@ -101,6 +123,8 @@ public class Movement : MonoBehaviour
                     if (firstIndex >= routeSO.routePoints.Count)
                     {
                         //finished
+                        theatreAnimator.SetTrigger("reverse");
+                        finalAnimator.SetTrigger("final");
                     }
                 }
             }           

@@ -27,6 +27,19 @@ public class CanvasAnimationSound : MonoBehaviour
         beatScript = FindObjectOfType<BeatScript>();
         NPCMovementList = FindObjectsOfType<NPCMovement>();
         BeatScript.instance.NPCMovementList = NPCMovementList;
+        int count = 0;
+        for (int i = 0; i < OptionsScript.instance.chars.Length; i++)
+        {
+            if (OptionsScript.instance.selectedChar != i)
+            {
+                if (NPCMovementList.Length > count)
+                {
+                    NPCMovementList[count].sprite.sprite = OptionsScript.instance.chars[i];
+                    count++;
+                }
+                
+            }                         
+        }
     }
 
     private void Update()

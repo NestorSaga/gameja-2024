@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d28cfc2b-1480-45c0-8ec9-fae6f91901ba}">
+		<property name="assetPath">
+			<value>514160__edwardszakal__score-beep.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.80979591836734699</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a0164c10-6f92-4de5-a302-79cdb62faed4}</destination>
+		</relationship>
+	</object>
+</objects>

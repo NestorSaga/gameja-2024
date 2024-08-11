@@ -7,6 +7,20 @@ public class PlayButtonScript : MonoBehaviour
 {
     public void OnClick()
     {
-        SceneManager.LoadScene(1);
+       
+
+        if (OptionsScript.instance.selectedMusic == 0)
+        {
+            SceneManager.LoadScene(1);
+            BeatScript.instance.BPM = 120;
+            BeatScript.instance.wiggle = .14f;
+
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+            BeatScript.instance.BPM = 200;
+            BeatScript.instance.wiggle = .08f;
+        }
     }
 }
