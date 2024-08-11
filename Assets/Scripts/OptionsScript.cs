@@ -20,7 +20,7 @@ public class OptionsScript : MonoBehaviour
 
     public Slider generalVolumeSlider;
 
-    public SelectedButtons music;
+    
 
 
     private void Awake()
@@ -38,18 +38,18 @@ public class OptionsScript : MonoBehaviour
     public void SelectChar(int id)
     {
         selectedChar = id;
-        GetComponent<SelectedButtons>().DeselectAll(id);
+        
     }
 
     public void SelectMusic(int id)
     {
         selectedMusic = id;
-        music.DeselectAll(id);
+        
     }
 
-    public void OnVolumeChange()
+    public void OnVolumeChange(float value)
     {
-        SetBusVolume(generalVolumePath, generalVolumeSlider.value);
+        SetBusVolume(generalVolumePath, value);
     }
 
     public void SetBusVolume(string busName, float volume)

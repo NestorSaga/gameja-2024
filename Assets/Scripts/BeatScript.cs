@@ -77,7 +77,7 @@ public class BeatScript : MonoBehaviour
             ResetTick();
             currentTimer = 0;
 
-            Debug.Log("RESET current dir is " + movement.routeSO.routePoints[movement.firstIndex].route[movement.secondIndex].direction);
+            //Debug.Log("RESET current dir is " + movement.routeSO.routePoints[movement.firstIndex].route[movement.secondIndex].direction);
         }
         currentFMODBeat = newBeat;
 
