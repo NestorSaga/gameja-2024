@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17354316, g: 0.21695107, b: 0.29905063, a: 1}
+  m_IndirectSpecularColor: {r: 0.17354298, g: 0.21695097, b: 0.2990503, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -742,7 +742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &249675071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,13 +755,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc556bdd719bce3439509c49c196b50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0.3
+  waitTime: 0.1
   XLimit: 3
   ZLimit: 3
   player: {fileID: 35488327}
   startingRot: {x: 0, y: 0, z: 0}
   currentRot: {x: 0, y: 0, z: 0}
-  routeSO: {fileID: 11400000, guid: c5e35181b7bc6704097a74ce1fe70f6e, type: 2}
+  routeSO: {fileID: 11400000, guid: 9a3ab6bd4e878c843bf7c304be5e9fec, type: 2}
   focusRouteReader: {fileID: 608928110}
   beatScript: {fileID: 0}
   sprite: {fileID: 35488326}
