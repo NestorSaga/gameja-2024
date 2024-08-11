@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a8ee02e7b56b4c93a3a2227cb96ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select:
+    Guid:
+      Data1: -1953085969
+      Data2: 1123944232
+      Data3: -1242626893
+      Data4: 948259846
+    Path: event:/Buenus
   buttons: []
 --- !u!1 &8960975697953616145
 GameObject:
@@ -114,4 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5a8ee02e7b56b4c93a3a2227cb96ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  select:
+    Guid:
+      Data1: -1953085969
+      Data2: 1123944232
+      Data3: -1242626893
+      Data4: 948259846
+    Path: event:/Buenus
   buttons: []

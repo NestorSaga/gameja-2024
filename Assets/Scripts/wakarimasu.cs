@@ -17,21 +17,25 @@ public class wakarimasu : MonoBehaviour
 
     public TMP_Text score;
 
+    public int scoreS, scoreA, scoreB, scoreC;
+
 
     public void PlayWakari()
     {
         //BeatScript.instance.points;
         int points = BeatScript.instance.buenus - BeatScript.instance.malus;
-        score.text = "Congrats! You made " + points + " points!";
-        
-        if (BeatScript.instance.buenus - BeatScript.instance.malus >= 130)
+
+        score.text = points + "p.";
+        if (BeatScript.instance.buenus - BeatScript.instance.malus >= scoreS)
         {
             PlayCum();
-        }else if (BeatScript.instance.buenus - BeatScript.instance.malus >= 80)
+            
+        }
+        else if (BeatScript.instance.buenus - BeatScript.instance.malus >= scoreA)
         {
             PlayHappy();
         }
-        else if (BeatScript.instance.buenus - BeatScript.instance.malus >= 50)
+        else if (BeatScript.instance.buenus - BeatScript.instance.malus >= scoreB)
         {
             PlayNormal();
         }
