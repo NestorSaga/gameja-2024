@@ -742,7 +742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &249675071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9121,13 +9121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc556bdd719bce3439509c49c196b50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0.3
+  waitTime: 0.1
   XLimit: 3
   ZLimit: 3
   player: {fileID: 1214007460}
   startingRot: {x: 0, y: 0, z: 0}
   currentRot: {x: 0, y: 0, z: 0}
-  routeSO: {fileID: 11400000, guid: eb135e39c22e6e74b81942f9290ddaae, type: 2}
+  routeSO: {fileID: 11400000, guid: 2b26cc08211f3c74ca49991d63c2280c, type: 2}
   focusRouteReader: {fileID: 608928110}
   beatScript: {fileID: 0}
   sprite: {fileID: 1214007459}
